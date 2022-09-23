@@ -5,8 +5,7 @@
 /.idea/
 /.ipynb_checkpoints/
 *.csv
-*.txt
-/.catboost_info/
+/catboost_info/
 !/data/domain_generation_algorithms/*/example_domains.txt
 !/data/domain_generation_algorithms/banjori/example_domains.txt
 
@@ -19,4 +18,8 @@
 !/poetry.lock
 
 !/pyproject.toml
-!/Makefile.common
+/models/en.word_split_0.1_32/
+/models/glove.no_split/
+/models/glove.word_split_0.1_32/
+/models/glove.word_split_0.5_256/
+/data/old/
