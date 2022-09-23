@@ -5,6 +5,7 @@
 /.idea/
 /.ipynb_checkpoints/
 *.csv
+*.txt
 /.catboost_info/
 !/data/domain_generation_algorithms/*/example_domains.txt
 !/data/domain_generation_algorithms/banjori/example_domains.txt
