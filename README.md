@@ -1,5 +1,4 @@
 This project train models for the DGA anomaly detection.
-Researche is presented in the Jupyter notebook `DGA_detection.ipynb`.
 
 
 # The best models
