@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "adj"
-version = "0"
-description = "Tigera's Anomaly Detection Framework"
-authors = ["Tigera Developers"]
+name = "DGA_anomaly_detection"
+version = "0.1"
+description = "Detection of DGA anomalies."
+authors = ["Leonid Ganeline"]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -11,17 +11,11 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
 pandas = "^1.4"
-# keep this version in sync with the elastic version used in tigera/operator
-#elasticsearch = "~7.16.2"
 numpy = "~1.22"
 scikit-learn = "==1.1.1"
 joblib = "^1.0.1"
 click = "~8.1.2"
 pydantic = "^1.10"
-#catboost = "~1.0.6"
-#transformers = "~4.19.2"
-#requests = "^2.27.1"
-#requests-toolbelt = "^0.9.1"
 tldextract = "^3.3.0"
 
 
@@ -39,10 +33,6 @@ pycodestyle = "^2.9"
 google-cloud-bigquery = "^2.34"
 ipykernel = "^6.7"
 pyarrow = "^9.0"
-#polyaxon = "==1.20.0"
-#numba = "^0.56"
-#pandera = "^0.12"
-# There was a conflict with "4.21.5"!
 protobuf = "^4.21.4"
 trustme = "^0.9.0"
 responses = "^0.21"

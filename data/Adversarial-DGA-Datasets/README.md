@@ -1,9 +1,9 @@
 # Adversarial DGA Dataset
 
 
-A collection of different adversarial attacks on Domain Generated Algorithms' (DGA) classifiers
+A collection of different adversarial attack datasets on Domain Generated Algorithms' (DGA) classifiers
 
-The goal of sharing the dataset is to help the research community to come with a new defense mechanism against DGA adversarial attacks.
+The goal of sharing the datasets is to help the research community to come with a new defense mechanism against DGA adversarial attacks.
 
 Each attack type contains 10,000 samples for evaluation and 2,000 samples for adversarial training.
 

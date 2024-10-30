@@ -1,4 +1,4 @@
-This project train models for the DGA anomaly detection.
+This project trains models for the DGA anomaly detection.
 
 
 # The best models
@@ -6,11 +6,12 @@ This project train models for the DGA anomaly detection.
 It is the `catboost.0.977.26_ensemble.model`. It is trained on 1000 iterations, 
 so it is smaller than the previous best.
 
-See the DGA_detection.ipynb : "Ensemble: token-based and bytes-based" section.
+See the `DGA_detection.ipynb`: "Ensemble: token-based and bytes-based" section.
 
 The model features: 
 - ngram length numbers, extracted by a tokenizer: 14 lengths
-- bytes as features: 26 bytes. Note: for the long domains it takes bytes from
+- bytes as features: 26 bytes. 
+- for the long domain names, the model takes bytes from
   the middle of the string.
 
 ## 2022-09-23
