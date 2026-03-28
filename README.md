@@ -1,33 +1,34 @@
-This project presents you with the model training for the `DGA anomaly detection`.
-It also contains the best models.
+# DGA Anomaly Detection
 
->[Domain Generation Algorithms (DGA) (Wikipedia)](https://en.wikipedia.org/wiki/Domain_generation_algorithm#Detection) 
-are algorithms seen in various families of malware that are used to periodically 
-generate a large number of domain names that can be used as rendezvous points with their 
-command and control servers. The large number of potential rendezvous points 
-makes it difficult for law enforcement to effectively shut down botnets, 
-since infected computers will attempt to contact some of these domain names 
-every day to receive updates or commands. The use of public-key cryptography 
-in malware code makes it unfeasible for law enforcement and other actors to 
-mimic commands from the malware controllers as some worms will automatically 
-reject any updates not signed by the malware controllers.
+This project provides machine learning and NLP pipelines for detecting Domain Generation Algorithms (DGA) anomalies in DNS traffic. Malicious actors use DGAs to periodically generate rendezvous domain names, making botnets resilient to takedowns. This system categorizes domains as benign or malignant based on their structure.
 
-The project is a part of the `DGA anomaly detection` research.
+## Overview
 
-# The best models
-## Update: 2022-09-26
-It is the `catboost.0.977.26_ensemble.model`. It is trained on 1000 iterations, 
-so it is smaller than the previous best model.
+- **Modular Features:** Engineers token-based (ngram lengths) and raw byte-based features from domain strings.
+- **Ensemble Model:** Uses a robust state-of-the-art `CatBoostClassifier` ensemble model.
+- **Automated Pipeline:** Full end-to-end functionality (loading, processing, model training, evaluation) provided in standard scripts.
 
-See the `DGA_detection.ipynb`: "Ensemble: token-based and bytes-based" section.
+## The Best Model
 
-The model features are engineered from the domain names of the DNS traffic: 
-- ngram length numbers, extracted by a tokenizer: 14 lengths
-- bytes as features: 26 bytes. 
-- Note: for the long domain names, the model takes bytes from
-  the middle of the string.
+The current best-performing model is `catboost.0.977.26_ensemble.model` (trained on 1000 iterations). 
+It leverages two sets of engineered features:
+1. **Ngram Lengths:** Tokenizer extracts up to 14 token lengths.
+2. **Raw Bytes:** 26 features representing the exact ASCII bytes (padded or cropped symmetrically).
 
-## 2022-09-23
-So far, it is `catboost.0.964.26_bytes.model` it trained on 1400 iterations.
-The `catboost.0.962.32_bytes.model` is nearby. It trained on 1000 iterations.
-The reason we use the first one, is it smaller.
+## Usage
+
+You can launch the training and evaluation workflow by executing the main python script from the root directory:
+
+```bash
+python src/train.py
+```
+
+*Note: The original Jupyter notebook containing earlier research is accessible in `experiments/DGA_detection.ipynb`.*
+
+## Documentation
+
+For an in-depth explanation of the logic behind this project, please refer to the markdown files in the `docs/` folder:
+- [Experiments](docs/experiments.md): Background context and evolution of the models.
+- [Tools](docs/tools.md): The specific tech stack and libraries used.
+- [Workflows](docs/workflows.md): The core architecture and execution logic.
+- [Evaluations](docs/evaluations.md): Key metrics and rationale behind modeling strategies.
